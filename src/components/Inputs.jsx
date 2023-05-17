@@ -24,10 +24,17 @@ export default function Inputs() {
         setUnit('imperial')
     }
 
+
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            changeCity();
+        }
+    };
+
     return (
         <div className='flex justify-between'>
             <div className=' flex justify-between px-2 py-1 bg-white rounded-md'>
-                <div className=''>
+                <div className=''  onKeyUp={handleKeyPress}>
                     <input 
                     type="text" 
                     placeholder="Search..."
